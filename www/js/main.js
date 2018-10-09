@@ -38,3 +38,31 @@ function logNumbers2() {
 }
 
 logNumbers2();
+
+function logNumbers3() {
+    console.log('7 exercise: ');
+    for(let i = 10; i >= 1; i--) {
+        console.log(i + '...');
+    }
+}
+
+logNumbers3();
+
+function logNumbers4() {
+    console.log('8 exercise: ');
+    let string = '';
+    for(let i = 1; i <= 10; i++) {
+        string += i + '...';
+    }
+    console.log(string);
+}
+
+logNumbers4();
+
+
+function isEven(aNumber) {
+    let res = aNumber % 2;
+    return res;
+}
+
+console.log('9 exercise: ' + isEven(4));
