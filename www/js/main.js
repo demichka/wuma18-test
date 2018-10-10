@@ -83,7 +83,8 @@ console.log('10 exercise: ' + logNumbers5());
 let string = 'Hej på dig';
 console.log('11 exercise: ' + string.indexOf('dig'));
 
-const alphabet = 'eyuioåaöäbcdfghjklmnpqrstvwxz';
+let alphabet = 'eyuioåaöäbcdfghjklmnpqrstvwxz';
+
 
 function checkLetter(aLetter) {
     let res = '';
@@ -99,4 +100,20 @@ function checkLetter(aLetter) {
 
 let userLetter = prompt('Enter a letter').toLowerCase();
 
+    let userArray = prompt('Enter letter(s) and nothing else').toLowerCase().split('');
+    console.log(userArray);
+
+    function checkSymbols(aString) {
+        let res = true;
+        let alfa = alphabet.split('');
+        for (let j = 0; j < aString.length; j++) {
+            if(!alfa.includes(aString[j])) {
+                res = false;
+                break;
+            }
+        }
+        return res;
+    }
+
 console.log('12 exercise: ' + checkLetter(userLetter));
+console.log(checkSymbols('13 exercise: ' + userArray));
