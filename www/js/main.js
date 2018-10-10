@@ -78,6 +78,25 @@ function logNumbers5() {
     return string;
 }
 
-
-
 console.log('10 exercise: ' + logNumbers5());
+
+let string = 'Hej på dig';
+console.log('11 exercise: ' + string.indexOf('dig'));
+
+const alphabet = 'eyuioåaöäbcdfghjklmnpqrstvwxz';
+
+function checkLetter(aLetter) {
+    let res = '';
+    for (let letter of aLetter) {
+        if (alphabet.includes(letter)) {
+            res = true;
+        } else {
+            res = false;
+        }
+    }
+    return res;
+}
+
+let userLetter = prompt('Enter a letter').toLowerCase();
+
+console.log('12 exercise: ' + checkLetter(userLetter));
