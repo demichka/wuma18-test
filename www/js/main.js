@@ -117,3 +117,5 @@ function checkSymbols(aString) {
 
 // console.log('12 exercise: ' + checkLetter(userLetter));
 // console.log(checkSymbols('13 exercise: ' + userArray));
+
+let regAlpha = new RegExp('[a-z]');
