@@ -1,0 +1,18 @@
+@import '_variables';
+
+
+body {
+    font-size: 18px;
+}
+
+h1 {
+    font-size: 3.5em;
+    color: $primary-color;
+}
+
+ol {
+    li {
+        font-size: 1.125rem;
+        margin-bottom: 10px;
+    }
+}
