@@ -1,8 +1,14 @@
 @import '_variables';
+@import '_mixins';
 
 
 body {
     font-size: 18px;
+    font-family: $base-font;
+}
+
+* {
+    box-sizing: border-box;
 }
 
 h1 {
@@ -10,9 +16,23 @@ h1 {
     color: $primary-color;
 }
 
-ol {
+ol, ul {
     li {
         font-size: 1.125rem;
         margin-bottom: 10px;
     }
+}
+
+header {
+    ul {
+        li {
+            display: inline-block;
+        }
+    }
+}
+
+p {
+    padding: 20px;
+    @include borders($secondary-color, 6px);
+    @include base-shadow($secondary-color);
 }
