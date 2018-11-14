@@ -1,5 +1,9 @@
+const alphabet = 'eyuioåaöäbcdfghjklmnpqrstvwxz';
+
+//Exercise 1
 console.log('1: ' + 'Hello world!');
 
+//Exercise 2
 function printName(name) {
     let res = 'Hello, ' + name + '!';
     return res;
@@ -7,20 +11,23 @@ function printName(name) {
 
 console.log('2: ' + printName('Zhenya'));
 
+
+
+//Exercise 3,4
 function answerName() {
     let res = prompt('Vad heter du?', 'Name');
     return res;
 }
 
+let userName = answerName();
 
-// let userName = answerName();
+if (userName === null || userName === '') {
+    console.log('4 exercise: Good bye!');
+} else {
+    console.log('3 exercise: ' + printName(userName));
+}
 
-// if (userName === null || userName === '') {
-//     console.log('4: Good bye!');
-// } else {
-//     console.log('3: ' + printName(userName));
-// }
-
+//Exercise 5
 function logNumbers() {
     console.log('5 exercise: ');
     for (let i = 0; i < 10; i++) {
@@ -29,6 +36,7 @@ function logNumbers() {
 }
 logNumbers();
 
+//Exercise 6
 function logNumbers2() {
     console.log('6 exercise: ');
     for (let i = 5; i < 16; i++) {
@@ -38,6 +46,7 @@ function logNumbers2() {
 
 logNumbers2();
 
+//Exercise 7
 function logNumbers3() {
     console.log('7 exercise: ');
     for (let i = 10; i >= 1; i--) {
@@ -47,6 +56,7 @@ function logNumbers3() {
 
 logNumbers3();
 
+//Exercise 8
 function logNumbers4() {
     console.log('8 exercise: ');
     let string = '';
@@ -58,6 +68,8 @@ function logNumbers4() {
 
 logNumbers4();
 
+
+//Exercise 9
 function isEven(aNumber) {
     let res = aNumber % 2;
     return res;
@@ -65,6 +77,7 @@ function isEven(aNumber) {
 
 console.log('9 exercise: ' + isEven(4));
 
+//Exercise 10
 function logNumbers5() {
     let string = '';
     for (let i = 1; i <= 10; i++) {
@@ -80,12 +93,11 @@ function logNumbers5() {
 
 console.log('10 exercise: ' + logNumbers5());
 
+//Exercise 11
 let string = 'Hej på dig';
 console.log('11 exercise: ' + string.indexOf('dig'));
 
-let alphabet = 'eyuioåaöäbcdfghjklmnpqrstvwxz';
-
-
+//Exercise 12,13
 function checkLetter(aLetter) {
     let res = '';
     for (let letter of aLetter) {
@@ -98,10 +110,8 @@ function checkLetter(aLetter) {
     return res;
 }
 
-// let userLetter = prompt('Enter a letter').toLowerCase();
-
-// let userArray = prompt('Enter letter(s) and nothing else').toLowerCase().split('');
-// console.log(userArray);
+let userLetter = prompt('Enter a letter').toLowerCase();
+let userArray = prompt('Enter letter(s) and nothing else').toLowerCase().split('');
 
 function checkSymbols(aString) {
     let res = true;
@@ -115,7 +125,8 @@ function checkSymbols(aString) {
     return res;
 }
 
-// console.log('12 exercise: ' + checkLetter(userLetter));
-// console.log(checkSymbols('13 exercise: ' + userArray));
+console.log('12 exercise: ' + checkLetter(userLetter));
+console.log('13 exercise: ' + checkSymbols(userArray));
 
+//Exercise 14
 let regAlpha = new RegExp('[a-z]');
