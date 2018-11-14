@@ -98,6 +98,7 @@ let string = 'Hej på dig';
 console.log('11 exercise: ' + string.indexOf('dig'));
 
 //Exercise 12,13
+let userLetter = prompt('Enter a letter').toLowerCase();
 function checkLetter(aLetter) {
     let res = '';
     for (let letter of aLetter) {
@@ -109,8 +110,9 @@ function checkLetter(aLetter) {
     }
     return res;
 }
+console.log('12 exercise: ' + checkLetter(userLetter));
 
-let userLetter = prompt('Enter a letter').toLowerCase();
+
 let userArray = prompt('Enter letter(s) and nothing else').toLowerCase().split('');
 
 function checkSymbols(aString) {
@@ -124,9 +126,23 @@ function checkSymbols(aString) {
     }
     return res;
 }
-
-console.log('12 exercise: ' + checkLetter(userLetter));
 console.log('13 exercise: ' + checkSymbols(userArray));
 
 //Exercise 14
-let regAlpha = new RegExp('[a-z]');
+let regAlpha = new RegExp(/[a-z, öåä]/gi);
+let userText = prompt('Enter something');
+
+function checkSymbolsWithRegEx(text) {
+    let res = true;
+    for (let i = 0; i < text.length; i++) {
+        if (text[i].search(regAlpha) < 0){
+            console.log(text[i].search(regAlpha));
+            console.log('checked ' + text[i]);
+            res = false;
+            break;
+        }
+    }
+    return res;
+}
+
+console.log('14 exercise: ' + checkSymbolsWithRegEx(userText));
