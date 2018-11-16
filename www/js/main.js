@@ -1,5 +1,36 @@
 const alphabet = 'eyuioåaöäbcdfghjklmnpqrstvwxz';
 
+function exc3() {
+    let userName = answerName();
+
+    if (userName === null || userName === '') {
+        console.log('4 exercise: Good bye!');
+    } else {
+        console.log('3 exercise: ' + printName(userName));
+    }
+}
+
+function exc10() {
+    console.log('10 exercise: ' + logNumbers5());
+
+}
+
+function exc12() {
+    let userLetter = prompt('Enter a letter').toLowerCase();
+    console.log('12 exercise: ' + checkLetter(userLetter));
+}
+
+function exc13() {
+    let userArray = prompt('Enter letter(s) and nothing else').toLowerCase().split('');
+    console.log('13 exercise: ' + checkSymbols(userArray));
+
+}
+
+function exc14() {
+    let userText = prompt('Enter something');
+    console.log('14 exercise: ' + checkSymbolsWithRegEx(userText));
+}
+
 //Exercise 1
 console.log('1: ' + 'Hello world!');
 
@@ -9,7 +40,7 @@ function printName(name) {
     return res;
 }
 
-console.log('2: ' + printName('Zhenya'));
+console.log('2 exercise: ' + printName('Zhenya'));
 
 
 
@@ -19,14 +50,6 @@ function answerName() {
     return res;
 }
 
-let userName = answerName();
-
-if (userName === null || userName === '') {
-    console.log('4 exercise: Good bye!');
-} else {
-    console.log('3 exercise: ' + printName(userName));
-}
-
 //Exercise 5
 function logNumbers() {
     console.log('5 exercise: ');
@@ -34,7 +57,6 @@ function logNumbers() {
         console.log(i);
     }
 }
-logNumbers();
 
 //Exercise 6
 function logNumbers2() {
@@ -44,8 +66,6 @@ function logNumbers2() {
     }
 }
 
-logNumbers2();
-
 //Exercise 7
 function logNumbers3() {
     console.log('7 exercise: ');
@@ -53,8 +73,6 @@ function logNumbers3() {
         console.log(i + '...');
     }
 }
-
-logNumbers3();
 
 //Exercise 8
 function logNumbers4() {
@@ -66,16 +84,22 @@ function logNumbers4() {
     console.log(string);
 }
 
-logNumbers4();
-
-
 //Exercise 9
 function isEven(aNumber) {
     let res = aNumber % 2;
+    if (res === 0) {
+        res = 'even';
+    }
+    else {
+        res = 'odd';
+    }
     return res;
 }
 
-console.log('9 exercise: ' + isEven(4));
+function exc9() {
+    let a = 6;
+    console.log('9 exercise: number ' + a + ' is ' + isEven(a));
+}
 
 //Exercise 10
 function logNumbers5() {
@@ -91,14 +115,11 @@ function logNumbers5() {
     return string;
 }
 
-console.log('10 exercise: ' + logNumbers5());
-
 //Exercise 11
 let string = 'Hej på dig';
 console.log('11 exercise: ' + string.indexOf('dig'));
 
 //Exercise 12,13
-let userLetter = prompt('Enter a letter').toLowerCase();
 function checkLetter(aLetter) {
     let res = '';
     for (let letter of aLetter) {
@@ -110,10 +131,9 @@ function checkLetter(aLetter) {
     }
     return res;
 }
-console.log('12 exercise: ' + checkLetter(userLetter));
 
 
-let userArray = prompt('Enter letter(s) and nothing else').toLowerCase().split('');
+
 
 function checkSymbols(aString) {
     let res = true;
@@ -126,18 +146,14 @@ function checkSymbols(aString) {
     }
     return res;
 }
-console.log('13 exercise: ' + checkSymbols(userArray));
 
 //Exercise 14
-let regAlpha = new RegExp(/[a-z, öåä]/gi);
-let userText = prompt('Enter something');
 
 function checkSymbolsWithRegEx(text) {
     let res = true;
+    let regAlpha = new RegExp(/[a-z\öåä]/gi);
     for (let i = 0; i < text.length; i++) {
-        if (text[i].search(regAlpha) < 0){
-            console.log(text[i].search(regAlpha));
-            console.log('checked ' + text[i]);
+        if (text[i].search(regAlpha) < 0) {
             res = false;
             break;
         }
@@ -145,4 +161,30 @@ function checkSymbolsWithRegEx(text) {
     return res;
 }
 
-console.log('14 exercise: ' + checkSymbolsWithRegEx(userText));
+//Exercise 15
+let email = prompt('Enter your email');
+
+validateEmail(email);
+
+function validateEmail(userText) {
+    //    let hasAtSign = userText.search(/[@]/) > 0;
+    let hasAtSign = userText.includes('@');
+    for (let i = 0; i < userText.length; i++) {
+        const atSign = '@';
+        let temp = '';
+        if (userText[i] === atSign) {
+            temp = userText[i];
+            console.log(temp);
+            i++;
+        }
+        if (userText[i + 1] === temp) {
+            console.log('Error: double@');
+            break;
+        }
+    }
+    if (!hasAtSign &&
+        userText.length < 3
+    ) {
+        console.log('error @');
+    }
+}
