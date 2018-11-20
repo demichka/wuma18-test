@@ -31,6 +31,13 @@ function exc14() {
     console.log('14 exercise: ' + checkSymbolsWithRegEx(userText));
 }
 
+function exc15() {
+
+    let email = prompt('Enter your email');
+
+    validateEmail(email);
+}
+
 //Exercise 1
 console.log('1: ' + 'Hello world!');
 
@@ -89,8 +96,7 @@ function isEven(aNumber) {
     let res = aNumber % 2;
     if (res === 0) {
         res = 'even';
-    }
-    else {
+    } else {
         res = 'odd';
     }
     return res;
@@ -162,27 +168,23 @@ function checkSymbolsWithRegEx(text) {
 }
 
 //Exercise 15
-let email = prompt('Enter your email');
-
-validateEmail(email);
 
 function validateEmail(userText) {
-    //    let hasAtSign = userText.search(/[@]/) > 0;
+    const atSign = '@';
     let hasAtSign = userText.includes('@');
+    let match = [];
     for (let i = 0; i < userText.length; i++) {
-        const atSign = '@';
-        let temp = '';
-        if (userText[i] === atSign) {
-            temp = userText[i];
-            console.log(temp);
-            i++;
-        }
-        if (userText[i + 1] === temp) {
-            console.log('Error: double@');
-            break;
+        temp = userText[i].search(atSign);
+        if (temp !== -1) {
+            match.push(temp);
+            if (match.length > 1) {
+                console.log('Error: double@');
+                break;
+            }
         }
     }
-    if (!hasAtSign &&
+
+    if (!hasAtSign ||
         userText.length < 3
     ) {
         console.log('error @');

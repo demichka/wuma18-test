@@ -14,10 +14,11 @@
             <li><a href="/sass-exercises.html">SASS page</a></li>
         </uL>
     </header>
-    <main class="container-fluid">
-        <h1>Programmeringsövningar</h1>
+    <main class="container">
+        <div class="row">
+            <h1>Programmeringsövningar</h1>
 
-        <ol class="col-sm-6">
+        <ol>
             <li>Logga: Hello world!</li>
             <li>Funktionen skall ta emot 1 argument “name”
                 Den skall logga: Hello <name>!</li>
@@ -81,16 +82,21 @@
 
             </li>
             <li>
-                Ta emot 1 argument anEmail som returnerar true eller false ifall strängen är en giltig e-mail adress.
+                <p>Ta emot 1 argument anEmail som returnerar true eller false ifall strängen är en giltig e-mail adress.
                 Krav:
-                - ett @,
-                - minst 2 bokstäver efter sista punkten
-                - minst 2 tecken mellan @ och punkten
-                - minst 2 tecken före @
-                - Ingen RegExp får användas, använd minst en for-loop
+                </p>
+                <ul>
+                    <li>ett @</li>
+                    <li>minst 2 bokstäver efter sista punkten</li>
+                    <li>minst 2 tecken mellan @ och punkten</li>
+                    <li>minst 2 tecken före @</li>
+                    <li>Ingen RegExp får användas, använd minst en for-loop</li>
+                </ul>
+                <button class="btn btn-primary d-block" onclick="exc15();">Exercise 15</button>
 
             </li>
         </ol>
+        </div>
     </main>
 
 
