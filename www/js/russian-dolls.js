@@ -1,3 +1,4 @@
+console.log('**** Russian dolls exercise begins: ****');
 class RussianDoll {
     constructor(size) {
         this.size = size;
@@ -56,3 +57,11 @@ dollNumEight.allDollsInsideMe();
 
 dollNumEight.putInsideMe(dollNumOne);
 dollNumTen.putInsideMe(dollNumHalf);
+
+
+
+
+console.log('****exercise end ****');
+console.log('***********************');
+console.log('                        ');
+console.log('                        ');
