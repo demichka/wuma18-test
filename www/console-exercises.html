@@ -10,12 +10,71 @@
 <body>
 
     <header>
-        <uL>
-            <li><a href="/sass-exercises.html">SASS page</a></li>
-            <li><a href="/console-exercises.html">Console page</a></li>
-        </uL>
+        <nav>
+            <ul class="nav">
+                <li class="nav-item"><a class="nav-link" href="/">Main exercises</a></li>
+                <li class="nav-item"><a class="nav-link" href="/sass-exercises.html">SASS page</a></li>
+                <li class="nav-item"><a class="nav-link active" href="/console-exercises.html">Console page</a></li>
+            </ul>
+        </nav>
     </header>
 
+    <main class="container">
+        <div class="row">
+            <h1>Öppna gärna konsolen för att kolla lösningar</h1>
+            <article>
+                <h3>Rockband</h3>
+                <p>Skapa klasserna <em>Musician</em> och <em>Band</em>. Båda bör ha namn.</p>
+                <h5>Musician</h5>
+                <p>Egenskaper: <em>name, instrument, age, bands</em> (en array av band musikern är med i).<br>
+                    Metoder: <em>joinBand(band), leaveBand(band)</em>.</p>
+                    <p><strong>Obs!</strong> Skicka <em>inte</em> en sträng till <em>joinBand</em> eller <em>leaveBand</em> utan ett objekt av klassen Band.</p>
+                    <h5>Band:</h5>
+                    <p>Egenskaper: <em>name, members (en array av musiker som är med i bandet)</em>.<br>
+                        Metoder: <em>hire(musician), fire(musician)</em></p>
+                        <p><strong>Obs!</strong> Skicka <em>inte</em> en sträng till <em>hire</em> eller <em>fire</em> utan ett objekt av klassen Musician.</p>
+                        <h5>Problem/utmaning</h5>
+                        <ul>
+                                <li>En musikers <em>bands</em>-egenskap ska uppdateras oavsett om man anropar <em>joinBand</em> och <em>leaveBand</em>-metoderna, eller anropar ett bands <em>hire</em>– och <em>fire</em>-metoder med musikern som inargument.</li>
+                                <li>En bands <em>members</em>-egenskap ska uppdateras oavsett om man anropar <em>hire</em>– och <em>fire</em>-metdoerna, eller anropar en muskers <em>joinBand</em> och <em>leaveBand</em>-metoder med bandet som inargument.</li>
+                                </ul>
+            </article>
+            <article>
+                <h3>Ryska Dockor</h3>
+                <ul>
+                        <li>Skapa en klass <em>RussianDoll</em> som har egenskaperna <em>size</em> (ett tal som ska vara 1-10) och <em>insideMe</em>, som kan innehålla en annan RussianDoll.</li>
+                        <li>Skapa en metod för att stoppa in en docka i en annan – <em>putInsideMe</em>. Man får inte stoppa in en docka som är lika stor eller större i annan docka. (Stoppa inte in dockor direkt genom att tilldela dem till InsideMe…)</li>
+                        <li>Skapa en metod <em>allDollsInsideMe</em>. Denna ska returnera en array över alla ryska dockor som finns inuti den aktuella dockan.</li>
+                        </ul>
+                        <p><strong>Obs!</strong> Skicka <em>inte</em> en sträng till <em>putInsideMe</em> utan ett objekt av klassen RussianDoll.</p>
+                        <h5>Att fundera på?</h5>
+                        <ul>
+                                <li>Ska det vara tillåtet att lägga en docka i en annan docka när den befinner sig inuti en docka? Om inte hur förhindrar vi det?</li>
+                                <li>Borde det finnas en metod för att ta ut en docka ur en annan docka? När ska det gå att göra detta?</li>
+                                </ul>
+            </article>
+            <article>
+                <h3>Bostäder</h3>
+                <h5>Skapa en klass Adress</h5>
+                <p>En adress ska ha egenskaperna gata, gatunummer, stad och postkod.<br>
+                    Klassen behöver inte ha några metoder.</p>
+                    <h5>Skapa en klass Person</h5>
+                    <p>En person ska ha egenskaperna namn och personnummer.<br>
+                        Klassen behöver inte ha några metoder.</p>
+                        <h5>Skapa en klass Bostad</h5>
+                        <p>En bostad ska ha egenskaperna adress (ett objekt av klassen Adress) och ägare (ett objekt av klassen Person).<br>
+                            Klassen behöver inte ha några metoder.</p>
+                            <h5>Skapa klasserna Hyresratt, Bostadsratt och Villa.</h5>
+                            <p>Dessa ska ärva av klassen bostad. En hyresrätt ska ha en hyra, en bostadsrätt ska ha ett inköpspris och en månadsavgift. En villa ska ha ett inköpspris och driftkostnad (sophämtning, vatten etc).<br>
+                                Lägg till egenskaper i respektive klass.</p>
+                                <h5>Att fundera på</h5>
+                                <p>Kan du utifrån de egenskaper som finns skapa en metod som räknar ut månadskostnad för en viss bostad? Behöver denna metod var olika för varje klass (Hyressratt, Bostadsratt och Villa)?</p>
+
+            </article>
+
+            <a class="d-block my-5" href="https://wuma18.nodehill.com/ovningar-klasser-oop/" target="_blank" title="Övningars källan">Övningars källan</a>
+        </div>
+    </main>
 
 
 

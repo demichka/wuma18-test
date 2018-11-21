@@ -10,116 +10,132 @@
 <body>
 
     <header>
-        <uL>
-            <li><a href="/sass-exercises.html">SASS page</a></li>
-            <li><a href="/console-exercises.html">Console page</a></li>
-        </uL>
+        <nav>
+            <ul class="nav">
+                <li class="nav-item"><a class="nav-link active" href="/">Main exersices</a></li>
+                <li class="nav-item"><a class="nav-link" href="/sass-exercises.html">SASS page</a></li>
+                <li class="nav-item"><a class="nav-link" href="/console-exercises.html">Console page</a></li>
+            </ul>
+        </nav>
     </header>
     <main class="container">
         <div class="row">
             <h1>Programmeringsövningar</h1>
 
-        <ol>
-            <li>Logga: Hello world!</li>
-            <li>Funktionen skall ta emot 1 argument “name”
-                Den skall logga: Hello <name>!</li>
-            <li><p>Gör en funktion som frågar användaren efter dess namn mha. den inbyggda funktionen prompt, spara svaret
-                i
-                variabeln “name” och logga sedan: Hello <name>!</p>
+            <ol>
+                <li>Logga: Hello world!</li>
+                <li>Funktionen skall ta emot 1 argument “name”
+                    Den skall logga: Hello <name>!</li>
+                <li>
+                    <p>Gör en funktion som frågar användaren efter dess namn mha. den inbyggda funktionen prompt, spara
+                        svaret
+                        i
+                        variabeln “name” och logga sedan: Hello <name>!</p>
                     <button class="btn btn-primary d-block" onclick="exc3();">Exercise 3</button>
-            </li>
-            <li>
-                Fortsätt på funktionen ovan och gör så att om användaren inte anger ett svar eller trycker “Avbryt” i
-                prompten så
-                loggar ni ej ut en hälsning utan istället loggas det: Goodbye.
-            </li>
-            <li>
-                <p>Logga 10 tal, börja på 0, sista loggen ska bli 9</p>
-                <button class="btn btn-primary d-block" onclick="logNumbers();">Exercise 5</button>
-            </li>
-            <li>
-                <p>Logga 11 tal, börja på 5, sista loggen ska bli 15</p>
-                <button class="btn btn-primary d-block" onclick="logNumbers2();">Exercise 6</button>
-            </li>
-            <li>
-                <p>Logga 10 tal, börja på 10, sista loggen ska bli 1, efter varje siffra skall det vara 3 punkter</p>
-                <button class="btn btn-primary d-block" onclick="logNumbers3();">Exercise 7</button>
-            </li>
-            <li><p>Logga 1...2...3...4...5...6...7...8...9...10… som en enda sträng och en for-loop</li></p>
-            <button class="btn btn-primary d-block" onclick="logNumbers4();">Exercise 8</button>
-            </p>
-            <li>
-                <p>Ta emot 1 argument aNumber som returnerar true ifall aNumber är jämn och false ifall den är udda, koden
-                skall
-                inte innehålla if-satser</p>
-            <button class="btn btn-primary d-block" onclick="exc9();">Exercise 9</button>
-            </li>
-            <li>
-                <p>Logga strängen 1.2...3.4...5.6...7.8...9.10… med en for-loop, återanvänd jämn/udda funktionen ovan.</p>
-            <button class="btn btn-primary d-block" onclick="exc10();">Exercise 10</button>
+                </li>
+                <li>
+                    Fortsätt på funktionen ovan och gör så att om användaren inte anger ett svar eller trycker “Avbryt”
+                    i
+                    prompten så
+                    loggar ni ej ut en hälsning utan istället loggas det: Goodbye.
+                </li>
+                <li>
+                    <p>Logga 10 tal, börja på 0, sista loggen ska bli 9</p>
+                    <button class="btn btn-primary d-block" onclick="logNumbers();">Exercise 5</button>
+                </li>
+                <li>
+                    <p>Logga 11 tal, börja på 5, sista loggen ska bli 15</p>
+                    <button class="btn btn-primary d-block" onclick="logNumbers2();">Exercise 6</button>
+                </li>
+                <li>
+                    <p>Logga 10 tal, börja på 10, sista loggen ska bli 1, efter varje siffra skall det vara 3 punkter</p>
+                    <button class="btn btn-primary d-block" onclick="logNumbers3();">Exercise 7</button>
+                </li>
+                <li>
+                    <p>Logga 1...2...3...4...5...6...7...8...9...10… som en enda sträng och en for-loop
+                </li>
+                </p>
+                <button class="btn btn-primary d-block" onclick="logNumbers4();">Exercise 8</button>
+                </p>
+                <li>
+                    <p>Ta emot 1 argument aNumber som returnerar true ifall aNumber är jämn och false ifall den är
+                        udda, koden
+                        skall
+                        inte innehålla if-satser</p>
+                    <button class="btn btn-primary d-block" onclick="exc9();">Exercise 9</button>
+                </li>
+                <li>
+                    <p>Logga strängen 1.2...3.4...5.6...7.8...9.10… med en for-loop, återanvänd jämn/udda funktionen
+                        ovan.</p>
+                    <button class="btn btn-primary d-block" onclick="exc10();">Exercise 10</button>
 
-            </li>
-            <li>
-                Med strängen “hej på dig” skall du hitta och logga vilket index “dig” börjar på. Förväntat svar: 7
-            </li>
-            <li>
-                <p>Ta emot 1 argument aLetter som returnerar true ifall tecknet som skickas in är med i alfabetet.
-                Funktionen
-                skall
-                acceptera både små och stora bokstäver.
-                Förväntat svar “m” -> true. “#” -> false. “K” -> true</p>
-            <button class="btn btn-primary d-block" onclick="exc12();">Exercise 12</button>
-            </li>
-            <li>
-                <p>Ta emot 1 argument aString som returnerar true ifall strängen endast innehåller tecken från alfabetet.
-                Förväntat svar “mySecretPassword64” -> false. “hej då” -> false. “Hejdå” -> true</p>
-            <button class="btn btn-primary d-block" onclick="exc13();">Exercise 13</button>
+                </li>
+                <li>
+                    Med strängen “hej på dig” skall du hitta och logga vilket index “dig” börjar på. Förväntat svar: 7
+                </li>
+                <li>
+                    <p>Ta emot 1 argument aLetter som returnerar true ifall tecknet som skickas in är med i alfabetet.
+                        Funktionen
+                        skall
+                        acceptera både små och stora bokstäver.
+                        Förväntat svar “m” -> true. “#” -> false. “K” -> true</p>
+                    <button class="btn btn-primary d-block" onclick="exc12();">Exercise 12</button>
+                </li>
+                <li>
+                    <p>Ta emot 1 argument aString som returnerar true ifall strängen endast innehåller tecken från
+                        alfabetet.
+                        Förväntat svar “mySecretPassword64” -> false. “hej då” -> false. “Hejdå” -> true</p>
+                    <button class="btn btn-primary d-block" onclick="exc13();">Exercise 13</button>
 
-            </li>
-            <li>
-                <p>Gör en funktion som klarar båda de 2 övningarna ovan med hjälp av RegExp, (Obs. den ska kunna hantera
-                det svenska alfabetet).</p>
-            <button class="btn btn-primary d-block" onclick="exc14();">Exercise 14</button>
+                </li>
+                <li>
+                    <p>Gör en funktion som klarar båda de 2 övningarna ovan med hjälp av RegExp, (Obs. den ska kunna
+                        hantera
+                        det svenska alfabetet).</p>
+                    <button class="btn btn-primary d-block" onclick="exc14();">Exercise 14</button>
 
-            </li>
-            <li>
-                <p>Ta emot 1 argument anEmail som returnerar true eller false ifall strängen är en giltig e-mail adress.
-                Krav:
-                </p>
-                <ul>
-                    <li>ett @</li>
-                    <li>minst 2 bokstäver efter sista punkten</li>
-                    <li>minst 2 tecken mellan @ och punkten</li>
-                    <li>minst 2 tecken före @</li>
-                    <li>Ingen RegExp får användas, använd minst en for-loop</li>
-                </ul>
-                <button class="btn btn-primary d-block" onclick="exc15();">Exercise 15</button>
-            </li>
-            <li>
-                <p>
-                    Gör samma funktion som ovan fast denna gång utan loop med RegExp.
-                </p>
-                <button class="btn btn-primary d-block" onclick="exc16();">Exercise 16</button>
-            </li>
-            <li>
-                <p>
-                    Gör samma funktion som ovan fast denna gång utan RegExp och loop(ar)
-                </p>
-                <button class="btn btn-primary d-block" onclick="exc17();">Exercise 17</button>
-            </li>
-            <li>
-                <p>
-                    Ta emot 2 argument weight, length. Räkna ut BMI-värdet baserat på dessa kilogram och centimeter och returnera svaret.
-                </p>
-            </li>
-            <li>
-                <p>
-                    Bygg vidare på föregående funktion genom att ta emot input vikt/längd från användaren (prompt),
-                     logga sedan ett olikt (sträng) meddelande baserat på under/normal/över -viktighet för de angivna värdena
-                </p>
-                <button class="btn btn-primary d-block" onclick="exc18();">Exercise 18 & 19</button>
-            </li>
-        </ol>
+                </li>
+                <li>
+                    <p>Ta emot 1 argument anEmail som returnerar true eller false ifall strängen är en giltig e-mail
+                        adress.
+                        Krav:
+                    </p>
+                    <ul>
+                        <li>ett @</li>
+                        <li>minst 2 bokstäver efter sista punkten</li>
+                        <li>minst 2 tecken mellan @ och punkten</li>
+                        <li>minst 2 tecken före @</li>
+                        <li>Ingen RegExp får användas, använd minst en for-loop</li>
+                    </ul>
+                    <button class="btn btn-primary d-block" onclick="exc15();">Exercise 15</button>
+                </li>
+                <li>
+                    <p>
+                        Gör samma funktion som ovan fast denna gång utan loop med RegExp.
+                    </p>
+                    <button class="btn btn-primary d-block" onclick="exc16();">Exercise 16</button>
+                </li>
+                <li>
+                    <p>
+                        Gör samma funktion som ovan fast denna gång utan RegExp och loop(ar)
+                    </p>
+                    <button class="btn btn-primary d-block" onclick="exc17();">Exercise 17</button>
+                </li>
+                <li>
+                    <p>
+                        Ta emot 2 argument weight, length. Räkna ut BMI-värdet baserat på dessa kilogram och centimeter
+                        och returnera svaret.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Bygg vidare på föregående funktion genom att ta emot input vikt/längd från användaren (prompt),
+                        logga sedan ett olikt (sträng) meddelande baserat på under/normal/över -viktighet för de
+                        angivna värdena
+                    </p>
+                    <button class="btn btn-primary d-block" onclick="exc18();">Exercise 18 & 19</button>
+                </li>
+            </ol>
         </div>
     </main>
 
