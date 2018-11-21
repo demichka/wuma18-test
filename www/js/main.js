@@ -45,6 +45,12 @@ function exc17() {
     let email = prompt('Enter your email');
     console.log(validateEmail3(email));
 }
+
+function exc18() {
+    let userWeight = prompt('Enter your weight in kg');
+    let userHeight = prompt('Enter your height in cm');
+    console.log(calculateBMI(userWeight, userHeight));
+}
 //Exercise 1
 console.log('1: ' + 'Hello world!');
 
@@ -186,23 +192,24 @@ function validateEmail(userText) {
         if (temp !== -1) {
             matchAtSign.push(temp);
         }
-    }   
+    }
     let indexAtSign = userText.indexOf(atSign);
     dotIndex = userText.lastIndexOf('.');
     let emailValid = true;
     try {
         if (userText.length < 4) throw "Error: minlength of email is 4 symbols";
-        if(!hasAtSign) throw "Error: input has no @";
-        if(matchAtSign.length > 1) throw "Error: double@";
-        if(indexAtSign < 2) throw "Error: email should have minimum 2 letters before @";
-        if(dotIndex >= userText.length - 2) throw "Error: email should have minimum 2 letters efter last dot";
-        if(dotIndex <= indexAtSign + 2) throw "Error: email shoul have minimum 2 letters between @ and last dot";
-    }
-    catch(error) {
+        if (!hasAtSign) throw "Error: input has no @";
+        if (matchAtSign.length > 1) throw "Error: double@";
+        if (indexAtSign < 2) throw "Error: email should have minimum 2 letters before @";
+        if (dotIndex >= userText.length - 2) throw "Error: email should have minimum 2 letters efter last dot";
+        if (dotIndex <= indexAtSign + 2) throw "Error: email shoul have minimum 2 letters between @ and last dot";
+    } catch (error) {
         console.log('Email invalid. ', error);
         emailValid = false;
     }
-    if (emailValid) {console.log(`Your email <${userText}> is valid.`)};
+    if (emailValid) {
+        console.log(`Your email <${userText}> is valid.`)
+    };
 }
 
 //Exercise 16
@@ -219,16 +226,18 @@ function validateEmailWithRegEx(userText) {
         hasAtSign.length > 1 ||
         dotIndex >= userText.length - 2 ||
         dotIndex <= atSignIndex + 2
-        ) {  
+    ) {
         validEmail = false;
     }
-    
+
     return validEmail;
 }
 
+//Exercise 17
+
 function validateEmail3(userText) {
     let validEmail = true;
-    if(
+    if (
         userText.length <= 4 ||
         userText.search('@') === -1 ||
         userText.indexOf('@') !== userText.lastIndexOf('@') ||
@@ -238,4 +247,29 @@ function validateEmail3(userText) {
         validEmail = false;
     }
     return validEmail;
+}
+
+//Exercise 18
+
+function calculateBMI(weight, height) {
+    weght = parseInt(weight);
+    height = parseInt(height);
+    let bmi = Math.round((weight / Math.pow(height, 2) * 10000), 1);
+    let result = '';
+    if (Number(bmi)) {
+        console.log(`Your BMI is ${bmi}`);
+        if (bmi > 16 && bmi <= 18.5) {
+            result += 'Underweight';
+        } else if (bmi > 18.5 && bmi <= 25) {
+            result += 'Normal';
+        } else if (bmi > 25) {
+            result += 'Overweight';
+        }
+        else {
+            result += 'BMI couldn\'t be calculated.';
+        }
+    } else {
+        result += 'Enter numbers';
+    }
+    return result;
 }
