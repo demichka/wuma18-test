@@ -32,10 +32,13 @@ function exc14() {
 }
 
 function exc15() {
-
     let email = prompt('Enter your email');
-
     validateEmail(email);
+}
+
+function exc16() {
+    let email = prompt('Enter your email');
+    console.log(validateEmailWithRegEx(email));
 }
 
 //Exercise 1
@@ -196,4 +199,25 @@ function validateEmail(userText) {
         emailValid = false;
     }
     if (emailValid) {console.log(`Your email <${userText}> is valid.`)};
+}
+
+//Exercise 16
+
+function validateEmailWithRegEx(userText) {
+    let validEmail = true;
+    let hasAtSign = [];
+    hasAtSign = userText.match(/@/g);
+    let dotIndex = userText.lastIndexOf('.');
+    let atSignIndex = userText.search(/@/g);
+    if (
+        userText.length <= 4 ||
+        !hasAtSign ||
+        hasAtSign.length > 1 ||
+        dotIndex >= userText.length - 2 ||
+        dotIndex <= atSignIndex + 2
+        ) {  
+        validEmail = false;
+    }
+    
+    return validEmail;
 }
