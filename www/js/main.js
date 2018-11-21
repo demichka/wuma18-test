@@ -41,6 +41,10 @@ function exc16() {
     console.log(validateEmailWithRegEx(email));
 }
 
+function exc17() {
+    let email = prompt('Enter your email');
+    console.log(validateEmail3(email));
+}
 //Exercise 1
 console.log('1: ' + 'Hello world!');
 
@@ -219,5 +223,19 @@ function validateEmailWithRegEx(userText) {
         validEmail = false;
     }
     
+    return validEmail;
+}
+
+function validateEmail3(userText) {
+    let validEmail = true;
+    if(
+        userText.length <= 4 ||
+        userText.search('@') === -1 ||
+        userText.indexOf('@') !== userText.lastIndexOf('@') ||
+        userText.lastIndexOf('.') >= userText.length - 2 ||
+        userText.lastIndexOf('.') <= userText.lastIndexOf('@') + 2
+    ) {
+        validEmail = false;
+    }
     return validEmail;
 }
