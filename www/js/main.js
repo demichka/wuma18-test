@@ -249,7 +249,7 @@ function validateEmail3(userText) {
     return validEmail;
 }
 
-//Exercise 18
+//Exercise 18 & 19
 
 function calculateBMI(weight, height) {
     weght = parseInt(weight);
