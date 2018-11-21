@@ -172,21 +172,28 @@ function checkSymbolsWithRegEx(text) {
 function validateEmail(userText) {
     const atSign = '@';
     let hasAtSign = userText.includes('@');
-    let match = [];
+    let matchAtSign = [];
+    let dotIndex = '.';
     for (let i = 0; i < userText.length; i++) {
-        temp = userText[i].search(atSign);
+        let temp = userText[i].search(atSign);
         if (temp !== -1) {
-            match.push(temp);
-            if (match.length > 1) {
-                console.log('Error: double@');
-                break;
-            }
+            matchAtSign.push(temp);
         }
+    }   
+    let indexAtSign = userText.indexOf(atSign);
+    dotIndex = userText.lastIndexOf('.');
+    let emailValid = true;
+    try {
+        if (userText.length < 4) throw "Error: minlength of email is 4 symbols";
+        if(!hasAtSign) throw "Error: input has no @";
+        if(matchAtSign.length > 1) throw "Error: double@";
+        if(indexAtSign < 2) throw "Error: email should have minimum 2 letters before @";
+        if(dotIndex >= userText.length - 2) throw "Error: email should have minimum 2 letters efter last dot";
+        if(dotIndex <= indexAtSign + 2) throw "Error: email shoul have minimum 2 letters between @ and last dot";
     }
-
-    if (!hasAtSign ||
-        userText.length < 3
-    ) {
-        console.log('error @');
+    catch(error) {
+        console.log('Email invalid. ', error);
+        emailValid = false;
     }
+    if (emailValid) {console.log(`Your email <${userText}> is valid.`)};
 }
