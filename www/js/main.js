@@ -1,5 +1,43 @@
 const alphabet = 'eyuioåaöäbcdfghjklmnpqrstvwxz';
 
+function exc3() {
+    let userName = answerName();
+
+    if (userName === null || userName === '') {
+        console.log('4 exercise: Good bye!');
+    } else {
+        console.log('3 exercise: ' + printName(userName));
+    }
+}
+
+function exc10() {
+    console.log('10 exercise: ' + logNumbers5());
+
+}
+
+function exc12() {
+    let userLetter = prompt('Enter a letter').toLowerCase();
+    console.log('12 exercise: ' + checkLetter(userLetter));
+}
+
+function exc13() {
+    let userArray = prompt('Enter letter(s) and nothing else').toLowerCase().split('');
+    console.log('13 exercise: ' + checkSymbols(userArray));
+
+}
+
+function exc14() {
+    let userText = prompt('Enter something');
+    console.log('14 exercise: ' + checkSymbolsWithRegEx(userText));
+}
+
+function exc15() {
+
+    let email = prompt('Enter your email');
+
+    validateEmail(email);
+}
+
 //Exercise 1
 console.log('1: ' + 'Hello world!');
 
@@ -9,7 +47,7 @@ function printName(name) {
     return res;
 }
 
-console.log('2: ' + printName('Zhenya'));
+console.log('2 exercise: ' + printName('Zhenya'));
 
 
 
@@ -19,14 +57,6 @@ function answerName() {
     return res;
 }
 
-let userName = answerName();
-
-if (userName === null || userName === '') {
-    console.log('4 exercise: Good bye!');
-} else {
-    console.log('3 exercise: ' + printName(userName));
-}
-
 //Exercise 5
 function logNumbers() {
     console.log('5 exercise: ');
@@ -34,7 +64,6 @@ function logNumbers() {
         console.log(i);
     }
 }
-logNumbers();
 
 //Exercise 6
 function logNumbers2() {
@@ -44,8 +73,6 @@ function logNumbers2() {
     }
 }
 
-logNumbers2();
-
 //Exercise 7
 function logNumbers3() {
     console.log('7 exercise: ');
@@ -53,8 +80,6 @@ function logNumbers3() {
         console.log(i + '...');
     }
 }
-
-logNumbers3();
 
 //Exercise 8
 function logNumbers4() {
@@ -66,16 +91,21 @@ function logNumbers4() {
     console.log(string);
 }
 
-logNumbers4();
-
-
 //Exercise 9
 function isEven(aNumber) {
     let res = aNumber % 2;
+    if (res === 0) {
+        res = 'even';
+    } else {
+        res = 'odd';
+    }
     return res;
 }
 
-console.log('9 exercise: ' + isEven(4));
+function exc9() {
+    let a = 6;
+    console.log('9 exercise: number ' + a + ' is ' + isEven(a));
+}
 
 //Exercise 10
 function logNumbers5() {
@@ -90,8 +120,6 @@ function logNumbers5() {
     }
     return string;
 }
-
-console.log('10 exercise: ' + logNumbers5());
 
 //Exercise 11
 let string = 'Hej på dig';
@@ -110,8 +138,8 @@ function checkLetter(aLetter) {
     return res;
 }
 
-let userLetter = prompt('Enter a letter').toLowerCase();
-let userArray = prompt('Enter letter(s) and nothing else').toLowerCase().split('');
+
+
 
 function checkSymbols(aString) {
     let res = true;
@@ -125,8 +153,47 @@ function checkSymbols(aString) {
     return res;
 }
 
-console.log('12 exercise: ' + checkLetter(userLetter));
-console.log('13 exercise: ' + checkSymbols(userArray));
-
 //Exercise 14
-let regAlpha = new RegExp('[a-z]');
+
+function checkSymbolsWithRegEx(text) {
+    let res = true;
+    let regAlpha = new RegExp(/[a-z\öåä]/gi);
+    for (let i = 0; i < text.length; i++) {
+        if (text[i].search(regAlpha) < 0) {
+            res = false;
+            break;
+        }
+    }
+    return res;
+}
+
+//Exercise 15
+
+function validateEmail(userText) {
+    const atSign = '@';
+    let hasAtSign = userText.includes('@');
+    let matchAtSign = [];
+    let dotIndex = '.';
+    for (let i = 0; i < userText.length; i++) {
+        let temp = userText[i].search(atSign);
+        if (temp !== -1) {
+            matchAtSign.push(temp);
+        }
+    }   
+    let indexAtSign = userText.indexOf(atSign);
+    dotIndex = userText.lastIndexOf('.');
+    let emailValid = true;
+    try {
+        if (userText.length < 4) throw "Error: minlength of email is 4 symbols";
+        if(!hasAtSign) throw "Error: input has no @";
+        if(matchAtSign.length > 1) throw "Error: double@";
+        if(indexAtSign < 2) throw "Error: email should have minimum 2 letters before @";
+        if(dotIndex >= userText.length - 2) throw "Error: email should have minimum 2 letters efter last dot";
+        if(dotIndex <= indexAtSign + 2) throw "Error: email shoul have minimum 2 letters between @ and last dot";
+    }
+    catch(error) {
+        console.log('Email invalid. ', error);
+        emailValid = false;
+    }
+    if (emailValid) {console.log(`Your email <${userText}> is valid.`)};
+}
